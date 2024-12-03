@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="/icon/milky-way16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/milky-way32x32.png" sizes="32x32">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <title>Terminsprøve</title>
+    <style>
+            header{
+              background: url(img/pctest.jpeg);
+              background-size: cover;
+              background-position: center;
+              min-height: 1000px;
+            }
+            .section{
+              padding-top: 4vw;
+              padding-bottom: 4vw;
+            }
+            .tabs .indicator{
+              background-color: #1a237e;
+            }
+            .tabs .tab a:focus, .tabs .tab a:focus.active{
+              background: transparent;
+            }
+            @media screen and (max-width: 670px){
+              header{
+                min-height: 500px;
+              }
+            }
+            </style>
+          </head>
+          <body>
+          
+            <!-- navbar -->
+            <header>
+          <nav class="nav-wrapper transparent">
+            <div class="container">
+              <a href="" class="brand-logo">Terminsprøve</a>
+              <a href="" class="sidenav-trigger" data-target="mobile-menu">
+                <i class="material-icons">menu</i>
+              </a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="../index.html">Abenettets forside</a></li>
+                <li><a href="terminsproeve.html">Terminsprøve</a></li>
+                <li><a href="oprettelse.html">Oprettelse af varer</a></li>                
+                <li><a href="sum.php">Sum af tal</a></li>
+                <li><a href="tal.php">Tal sammenligning</a></li>                
+                <li><a href="loop.html">Loop siden</a></li>
+                <li><a href="om.html">"Om" siden</a></li>
+              </ul>
+              <ul class="sidenav grey ligten-2" id="mobile-menu">
+                <li><a href="../index.html">Abenettets forside</a></li>
+                <li><a href="terminsproeve.html">Terminsprøve</a></li>
+                <li><a href="oprettelse.html">Oprettelse af varer</a></li>                
+                <li><a href="sum.php">Sum af tal</a></li>
+                <li><a href="tal.php">Tal sammenligning</a></li>                
+                <li><a href="loop.html">Loop siden</a></li>
+                <li><a href="om.html">"Om" siden</a></li>
+              </ul>
+            </div>
+          </nav>
+            </header>
+</head>
+<body>
+
+      <!-- photo / grid -->
+      <section class="container section scrollspy" id="photos">
+        <div class="row">
+          <div class="col s12 l4">
+          </div>
+          <div class="col s12 l6 offset-l1">
+            <h2 class="indigo-text text-darken-4" >Tal sammenligning</h2>
+            <h3>Denne side sammeligner tal og viser det største af dem</h3>
+        <form method="post">
+            <label for="tal1">Tal1:<br></label>
+            <input type="text" name="tal1">
+            <br>
+			<br>
+            <label for="tal2">Tal2:<br></label>
+            <input type="text" name="tal2">
+            <br>
+			<br>
+			<label for="tal3">Tal3:<br></label>
+            <input type="text" name="tal3">
+            <br>
+			<br>
+			Største tal:<br><input type="text" value="<?php echo $resultat;?>">
+            <br>
+            <br>
+            <button class="btn" name="udregn">Find største tal!</button>
+        </form>
+          </div>
+        </div>
+      </section>
+    
+  <!-- footer -->
+  <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l6">
+          <h5>Om mig</h5>
+            <p>
+                Denne side er et hobbyprojekt i hjemmesidedesign, som jeg er ved at lave.
+
+                <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+            </p>
+        </div>
+        <div class="col s12 l4 offset-l2">
+          <h5>Forbind - Under udvikling</h5>
+          <ul>
+            <li><a href="#" class="grey-text text-lighten-3">Facebook</a></li>
+            <li><a href="#" class="grey-text text-lighten-3">Twitter</a></li>
+            <li><a href="#" class="grey-text text-lighten-3">Linked in</a></li>
+            <li><a href="#" class="grey-text text-lighten-3">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container center-align">&copy; 2018 Abenettet.dk</div>
+    </div>
+  </footer>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+      $('.materialboxed').materialbox();
+      $('.parallax').parallax();
+      $('.tabs').tabs();
+      $('.datepicker').datepicker({
+        disableWeekends: true
+      });
+      $('.tooltipped').tooltip();
+      $('.scrollspy').scrollSpy();
+    });
+  </script>
+</body>
+</html>

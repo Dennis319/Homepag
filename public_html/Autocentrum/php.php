@@ -1,0 +1,175 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="/icon/milky-way16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/milky-way32x32.png" sizes="32x32">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <title>Velkommen til undersiden, Autocentrum</title>
+    <style>
+            header{
+              background: url(img/coolcar.jpg);
+              background-size: cover;
+              background-position: center;
+              min-height: 1000px;
+            }
+            .section{
+              padding-top: 4vw;
+              padding-bottom: 4vw;
+            }
+            .tabs .indicator{
+              background-color: #1a237e;
+            }
+            .tabs .tab a:focus, .tabs .tab a:focus.active{
+              background: transparent;
+            }
+            @media screen and (max-width: 670px){
+              header{
+                min-height: 500px;
+              }
+            }
+            </style>
+          </head>
+          <body>
+          
+            <!-- navbar -->
+            <header>
+          <nav class="nav-wrapper transparent">
+            <div class="container">
+              <a href="" class="brand-logo">Autocentrum</a>
+              <a href="" class="sidenav-trigger" data-target="mobile-menu">
+                <i class="material-icons">menu</i>
+              </a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="../index.html">Abenettets forside</a></li>
+                <li><a href="autocentrum.html">Autocentrum</a></li>
+                <li><a href="liste.html">Liste</a></li>                
+                <li><a href="biler.html">Biler</a></li>
+                <li><a href="film.html">Film</a></li>                
+                <li><a href="galleri.html">Galleri</a></li>
+                <li><a href="rente.html">Rente</a></li>
+                <li><a href="php.php">PHP</a></li>
+                <li><a href="nyhedsbrev.php">Nyhedsbrev</a></li>
+                <li><a href="mailto:dennis@abenettet.dk" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="Send en mail">
+                  <i class="material-icons prefix">email</i>
+                </a></li>
+              </ul>
+              <ul class="sidenav grey ligten-2" id="mobile-menu">
+                    <li><a href="../index.html">Forside</a></li>
+                    <li><a href="autocentrum.html">Autocentrum</a></li>
+                    <li><a href="liste.html">Liste</a></li>                
+                    <li><a href="biler.html">Biler</a></li>
+                    <li><a href="film.html">Film</a></li>                
+                    <li><a href="galleri.html">Galleri</a></li>
+                    <li><a href="rente.html">Rente</a></li>
+                    <li><a href="php.php">PHP</a></li>
+                    <li><a href="nyhedsbrev.php">Nyhedsbrev</a></li>
+              </ul>
+            </div>
+          </nav>
+            </header>
+</head>
+<body>
+
+      <!-- photo / grid -->
+  <section class="container section scrollspy" id="photos">
+    <div class="row">
+      <div class="col s12 l4 push-l7 offset-l1">
+        <img src="img/city.jpg" alt="" class="responsive-img materialboxed">
+      </div>
+      <div class="col s12 l12">
+        <h2 class="indigo-text text-darken-4" >Php udregner</h2>
+        <?php
+$resultat = '';
+   	if (isset($_POST['udregn']))
+	{
+	$a = $_POST['tal1'];
+	$b = $_POST['tal2'];
+	$operator = $_POST['operator'];
+	
+	if ($operator == "+") {
+		$resultat = $a + $b;
+	} elseif ($operator == "-"){
+		$resultat = $a - $b;
+	} elseif ($operator == "*"){
+		$resultat = $a * $b;
+	} elseif ($operator == "/"){
+		$resultat = $a / $b;
+	} else	{
+		echo "Mangler operator";
+	}
+}
+?>
+        <form method="post">
+            <label for="tal1">Tal1:<br></label>
+            <input type="text" name="tal1">
+            <br>
+			<br>
+            <label for="operator">Operator:<br></label>
+            <input type="text" name="operator">
+            <br>
+			<br>
+			<label for="tal2">Tal2:<br></label>
+            <input type="text" name="tal2">
+            <br>
+			<br>
+			Resultat:<br><input type="text" value="<?php echo $resultat;?>">
+            <br>
+            <button class="btn" name="udregn">Udregn!</button>
+        </form>
+      </div>
+    </div>
+      </section>
+    
+  <!-- footer -->
+  <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l6">
+          <h5>Om mig</h5>
+            <p>
+                Denne side er et hobbyprojekt i hjemmesidedesign, som jeg er ved at lave.
+
+                <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+            </p>
+        </div>
+        <div class="col s12 l4 offset-l2">
+          <h5>Forbind - Under udvikling</h5>
+          <ul>
+            <li><a href="#" class="grey-text text-lighten-3">Facebook</a></li>
+            <li><a href="#" class="grey-text text-lighten-3">Twitter</a></li>
+            <li><a href="#" class="grey-text text-lighten-3">Linked in</a></li>
+            <li><a href="#" class="grey-text text-lighten-3">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container center-align">&copy; 2018 Abenettet.dk</div>
+    </div>
+  </footer>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+      $('.materialboxed').materialbox();
+      $('.parallax').parallax();
+      $('.tabs').tabs();
+      $('.datepicker').datepicker({
+        disableWeekends: true
+      });
+      $('.tooltipped').tooltip();
+      $('.scrollspy').scrollSpy();
+    });
+  </script>
+</body>
+</html>
